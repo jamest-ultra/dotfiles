@@ -1,4 +1,4 @@
-# ~/.bashrc - customized by James Taylor - Apr 2025
+# ~/.bashrc
 
 # Only run in interactive shells
 case $- in
@@ -15,7 +15,7 @@ HISTFILESIZE=2000
 # Update terminal size automatically
 shopt -s checkwinsize
 
-# lesspipe support
+# Enable lesspipe if available
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Set Debian chroot name in prompt, if applicable
@@ -41,31 +41,14 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# Set terminal title in xterm-compatible terminals
+# Set terminal title for xterm-compatible terminals
 case "$TERM" in
     xterm*|rxvt*)
         PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
         ;;
 esac
 
-# Enable color support for common commands
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# Useful ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Alert for long-running commands
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Load custom aliases
+# Source bash aliases if available
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -79,10 +62,5 @@ if ! shopt -oq posix; then
     fi
 fi
 
-# Custom aliases
-alias sso-login="$HOME/projects/aws-util/scripts/sso-login.sh"
-alias upcy="docker exec -it ultraportal-cypress-1 bash"
-alias upphp="docker exec -it ultraportal-ultraportal-php-fpm-1 bash"
-
-# Load Rust environment
+# Load Rust environment if installed
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"

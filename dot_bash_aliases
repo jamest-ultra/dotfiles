@@ -1,0 +1,16 @@
+# ~/.bash_aliases
+
+# ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Docker aliases
+alias upcy="docker exec -it ultraportal-cypress-1 bash"
+alias upphp="docker exec -it ultraportal-ultraportal-php-fpm-1 bash"
+
+# AWS login alias
+alias sso-login="$HOME/projects/aws-util/scripts/sso-login.sh"
+
+# Alert alias
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
