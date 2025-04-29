@@ -2,17 +2,6 @@
 
 Personalized dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 
----
-
-## 📦 What's Included
-- `.bashrc` — customized Bash configuration
-- `.bash_aliases` — useful Bash shortcuts
-- `.gitconfig` — Git global settings
-- `.profile` — login shell environment
-- `.themes/` — custom desktop themes (GTK, icons)
-
----
-
 ## 🚀 How to Install on a New Machine
 
 1. Install chezmoi:
