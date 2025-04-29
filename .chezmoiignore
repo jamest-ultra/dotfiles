@@ -1,0 +1,39 @@
+# Ignore files and folders that change frequently or aren't configs
+
+# Shell history and temp
+.bash_history
+.bash_history-*.tmp
+
+# Cache, local runtime, and snap data
+.cache/
+.local/
+.snap/
+.var/
+
+# SDKs and temporary installs
+.dotnet/
+.npm/
+.rustup/
+
+# SSH keys and sensitive stuff
+.ssh/
+.gnupg/
+
+# Desktop user folders (don't want to track random files)
+Desktop/
+Documents/
+Downloads/
+Music/
+Pictures/
+Public/
+Templates/
+Videos/
+
+# Docker config runtime
+.docker/
+
+# Ignore wakatime secret config if you want
+.wakatime.cfg
+
+# Ignore specific themes you don't want synced
+# themes/NameOfTheme/
