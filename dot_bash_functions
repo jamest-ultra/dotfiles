@@ -1,0 +1,44 @@
+# ~/.bash_functions
+
+# Docker: open a shell into a container by name
+docker_shell() {
+    if [ -z "$1" ]; then
+        echo "Usage: docker_shell <container-name>"
+        return 1
+    fi
+    docker exec -it "$1" bash
+}
+
+# Git: quick pull and rebase current branch
+git_sync() {
+    git pull --rebase
+}
+
+# Git: quick status with branch name
+git_status() {
+    git status -sb
+}
+
+# SSH into AWS EC2 using public IP
+aws_ssh() {
+    if [ -z "$1" ]; then
+        echo "Usage: aws_ssh <ec2-public-ip>"
+        return 1
+    fi
+    ssh -i "$HOME/.ssh/your-key.pem" "ubuntu@$1"
+}
+
+# Find big files in current directory
+biggest_files() {
+    du -ah . | sort -rh | head -n 20
+}
+
+# Make and cd into a new directory
+mkcd() {
+    mkdir -p "$1" && cd "$1"
+}
+
+# Quick HTTP server (Python)
+serve() {
+    python3 -m http.server "${1:-8000}"
+}

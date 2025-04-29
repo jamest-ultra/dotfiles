@@ -53,6 +53,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Source bash functions if available
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
+
 # Enable bash completion
 if ! shopt -oq posix; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
