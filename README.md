@@ -27,4 +27,4 @@ Personalized dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 ## Security
 - No SSH keys or secret files are included in the repository.
 - Always double-check what chezmoi is managing with `chezmoi status`.
-- 
+  
