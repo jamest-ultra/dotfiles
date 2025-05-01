@@ -8,6 +8,7 @@ alias l='ls -CF'
 # Docker aliases
 alias upcy="docker exec -it ultraportal-cypress-1 bash"
 alias upphp="docker exec -it ultraportal-ultraportal-php-fpm-1 bash"
+alias ddown="docker compose down"
 
 # AWS login alias
 alias sso-login="$HOME/projects/aws-util/scripts/sso-login.sh"
