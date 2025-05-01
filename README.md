@@ -2,7 +2,7 @@
 
 Personalized dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 
-## 🚀 How to Install on a New Machine
+## How to Install on a New Machine
 
 1. Install chezmoi:
     ```bash
@@ -17,18 +17,14 @@ Personalized dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 
 ---
 
-## ⚙️ Notes
+## Notes
 - Do **not** edit files directly in `~/` — always edit via chezmoi (`chezmoi edit ~/.bashrc`, etc.)
 - Sensitive files like `.wakatime.cfg` and `.ssh/` are ignored for security.
 - Themes are synced via `~/.themes/`.
 
 ---
 
-## 🛡️ Security
+## Security
 - No SSH keys or secret files are included in the repository.
 - Always double-check what chezmoi is managing with `chezmoi status`.
-
----
-
-## 📜 License
-Personal use.
+- 
